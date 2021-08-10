@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang=eng>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width initial-scale=1">
+  <!-- HTML -->
+  <title>3D flip transistion login form</title>
+  
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="inner-box" id="card">
+        <div class="card-front">
+          <h2>Login</h2>
+          <form>
+            <input type="email" class="input-box" placeholder="Enter your email id" required>
+            <input type="password" class="input-box" placeholder="password" required>
+            <button type="Submit" class="submit-btn">Submit</button>
+            <input type="checkbox"><span>Remember me</span> 
+          </form>
+          <button type="button" onclick="openRegister()">i m new here</button>
+          <a href=" ">Forgot password</a>
+          
+        </div>
+        <div class="card-back">
+           <h2>Register</h2>
+          <form>
+             <input type="text" class="input-box" placeholder="Enter your name" required>
+            <input type="email" class="input-box" placeholder="Enter your email id" required>
+            <input type="password" class="input-box" placeholder="password" required>
+            <button type="Submit" class="submit-btn">Submit</button>
+            <input type="checkbox"><span>Remember me</span> 
+          </form>
+          <button type="button" onclick="openLogin()">i  ve a account</button>
+          <a href=" ">Forgot password</a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Project -->
+  <script src="main.js"></script>
+</body>
+</html>
