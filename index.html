@@ -6,9 +6,19 @@
   <!-- HTML -->
   <title>3D flip transistion login form</title>
   
-
+  <script src="JS/main.js"></script>
   <!-- Custom Styles -->
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+
+  <!--https://firebase.google.com/docs/web/setup#config-web-app -->
+  <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
+  <script>
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  
 </head>
 
 <body>
@@ -18,32 +28,32 @@
         <div class="card-front">
           <h2>Login</h2>
           <form>
-            <input type="email" class="input-box" placeholder="Enter your email id" required>
-            <input type="password" class="input-box" placeholder="password" required>
-            <button type="Submit" class="submit-btn">Submit</button>
+            <input type="email" class="input-box" placeholder="Enter your email id" required id="email_login">
+            <input type="password" class="input-box" placeholder="Password" required id="pass_login">
+            <button type="button" class="submit-btn" onclick="signIn()">Submit</button>
             <input type="checkbox"><span>Remember me</span> 
           </form>
-          <button type="button" onclick="openRegister()">i m new here</button>
+          <button type="button" onclick="openRegister()">I'm new here</button>
           <a href=" ">Forgot password</a>
-          
+          <button onclick="alt()">Alert</button>
         </div>
         <div class="card-back">
            <h2>Register</h2>
           <form>
-             <input type="text" class="input-box" placeholder="Enter your name" required>
-            <input type="email" class="input-box" placeholder="Enter your email id" required>
-            <input type="password" class="input-box" placeholder="password" required>
-            <button type="Submit" class="submit-btn">Submit</button>
+            <input type="text" class="input-box" placeholder="Enter your name" required id="name_signup">
+            <input type="email" class="input-box" placeholder="Enter your email id" required id="email_signup">
+            <input type="password" class="input-box" placeholder="password" required id="pass_signup">
+            <button type="button" class="submit-btn" onclick="signUp()">Submit</button>
             <input type="checkbox"><span>Remember me</span> 
           </form>
-          <button type="button" onclick="openLogin()">i  ve a account</button>
+          <button type="button" onclick="openLogin()">I've a account</button>
           <a href=" ">Forgot password</a>
-          
+          <button onclick="alt()">Alert</button>
         </div>
       </div>
+      
+    
     </div>
   </div>
-  <!-- Project -->
-  <script src="main.js"></script>
 </body>
 </html>
