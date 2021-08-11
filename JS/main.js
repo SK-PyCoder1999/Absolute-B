@@ -46,19 +46,20 @@ function signUp(){
               email: userEmail,
           }
           firebaseRef.child(uid).set(userData);
-          alert('Your account was created successfully\nYou can log in now.',
+          alert('Your account was created successfully\nYou can log in now.')
+          var card = document.getElementById("card");
+    card.style.transform ="rotateY(-360deg)";
           
-          )
       }).catch((error) => {
           var errorCode = error.code;
           var errorMessage = error.message;
           alert(errorCode+ "\n"+ errorMessage)
       });
-      var card = document.getElementById("card");
-  card.style.transform ="rotateY(-360deg)";
-  document.getElementById("name_signup").value="";
-  document.getElementById("email_signup").value="";
-  document.getElementById("pass_signup").value="";
+    // var card = document.getElementById("card");
+    // card.style.transform ="rotateY(-360deg)";
+    document.getElementById("name_signup").value="";
+    document.getElementById("email_signup").value="";
+    document.getElementById("pass_signup").value="";
   
 }
 
