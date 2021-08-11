@@ -3,7 +3,9 @@ var firebaseConfig = {
   apiKey: "AIzaSyDHaO4jSKDXP5s3t14cwDoxx0KGgsnewuY",
 
   authDomain: "fts4-36ac5.firebaseapp.com",
+
   databaseURL: "https://fts4-36ac5-default-rtdb.asia-southeast1.firebasedatabase.app",
+
   projectId: "fts4-36ac5",
 
   storageBucket: "fts4-36ac5.appspot.com",
@@ -44,16 +46,20 @@ function signUp(){
               email: userEmail,
           }
           firebaseRef.child(uid).set(userData);
-          alert('Your account was created successfully, you can log in now.',
+          alert('Your account was created successfully\nYou can log in now.',
           
           )
       }).catch((error) => {
-          // Handle Errors here.
           var errorCode = error.code;
           var errorMessage = error.message;
           alert(errorCode+ "\n"+ errorMessage)
       });
-      
+      var card = document.getElementById("card");
+  card.style.transform ="rotateY(-360deg)";
+  document.getElementById("name_signup").value="";
+  document.getElementById("email_signup").value="";
+  document.getElementById("pass_signup").value="";
+  
 }
 
 function signIn(){
@@ -64,32 +70,28 @@ function signIn(){
         firebase.auth().signInWithEmailAndPassword(userSIEmail, userSIPassword).then((success) => {
             alert("You are successfully logged in")
         }).catch((error) => {
-            // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
             alert(errorCode+ "\n"+ errorMessage)
-            
         });
 
-// xxxxxxxxxx Working For Profile Page xxxxxxxxxx
-// xxxxxxxxxx Get data from server and show in the page xxxxxxxxxx
-firebase.auth().onAuthStateChanged((user)=>{
-    if (user) {
-    //   User is signed in.
-        let user = firebase.auth().currentUser;
-        let uid
-        if(user != null){
-            uid = user.uid;
-        }
-        let firebaseRefKey = firebase.database().ref().child(uid);
-        firebaseRefKey.on('value', (dataSnapShot)=>{
-            console.log(dataSnapShot.val().user+"   "+dataSnapShot.val().email)
-        })
-    } else {
-      alert("Please Sign IN")
-    }
-});
+    firebase.auth().onAuthStateChanged((user)=>{
+        if (user) {
+            let user = firebase.auth().currentUser;
+            let uid
+            if(user != null){
+                uid = user.uid;
+            }
+            let firebaseRefKey = firebase.database().ref().child(uid);
+            firebaseRefKey.on('value', (dataSnapShot)=>{
+                console.log(dataSnapShot.val().user+"   "+dataSnapShot.val().email)
+            })
+        } 
+    });
+    document.getElementById("email_login").value="";
+    document.getElementById("pass_login").value="";
 }
+
 function alt(){
   firebase.auth().onAuthStateChanged((user)=>{
     if (user) {
@@ -102,7 +104,8 @@ function alt(){
         firebaseRefKey.on('value', (dataSnapShot)=>{
             alert("UserName: "+ dataSnapShot.val().user+"\nEmail: "+dataSnapShot.val().email)
         })
-    } else {
+    } 
+    else {
       alert("Please Sign IN")
     }
 });
@@ -110,10 +113,8 @@ function alt(){
 
 function signOut(){
   firebase.auth().signOut().then(function() {
-      // Sign-out successful.
-      
+      alert("You are successfully logged out")
   }).catch(function(error) {
-      // An error happened.
       let errorMessage = error.message;
       alert(errorCode)
   });
