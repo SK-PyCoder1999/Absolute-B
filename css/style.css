@@ -12,6 +12,16 @@
     align-items: center;
     justify-content: center;
 }
+header{
+    font-size: 50px;
+    font-weight: 800;
+    outline: none;
+    text-transform: uppercase;
+    background-size: 400%;
+    background: rgb(187,187,245);
+    animation: animate 10s linear infinite;
+    margin: 0; 
+}
 .card{
     width: 350px;
     height: 500px;
