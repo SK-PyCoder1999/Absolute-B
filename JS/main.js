@@ -70,6 +70,7 @@ function signIn(){
    
         firebase.auth().signInWithEmailAndPassword(userSIEmail, userSIPassword).then((success) => {
             alert("You are successfully logged in")
+            window.location.href="home.html";
         }).catch((error) => {
             var errorCode = error.code;
             var errorMessage = error.message;
