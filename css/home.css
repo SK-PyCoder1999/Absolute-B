@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    font-family: league-spartan;
+    background: rgb(187,187,245);
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+}
+
+#headline{
+    font-weight: 800;
+    width: 60vw;
+    margin: 10vh auto;
+    color: rgb(26, 0, 51);
+}
+h2{
+    color: rgb(26, 0, 51);
+}
+
+.card{
+    display: inline-flex;
+    margin: 10px;
+    background-color: rgb(3, 11, 58);
+    color: #fff;
+}
+
+
+button{
+    margin-top: 50px;
+    width: 150px;
+    padding: 8px;
+    font-size: 16px ;
+    font-family: sans-serif;
+    font-weight: 500;
+    border: none;
+    border-radius: 16px;
+    background-color: rgb(81, 109, 236);
+    cursor: pointer;   
+}
+
+button:hover{
+    background: linear-gradient(to right,#1765C1,#F20000);
+    cursor: pointer;
+    color: #EFF3FF;
+}
+  
+.signout{
+    position: absolute;
+    top: -3px;
+    left: 80%;
+    width: 80px;
+    background-color: rgb(81, 109, 236);
+    border: none;
+}
